@@ -1,0 +1,2 @@
+class PrefectureGenre < ApplicationRecord
+end

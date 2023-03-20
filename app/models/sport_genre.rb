@@ -1,0 +1,2 @@
+class SportGenre < ApplicationRecord
+end
