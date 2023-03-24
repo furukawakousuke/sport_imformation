@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="mt-5 h4">
+        <p class="my-1">Name</p><span class="ml-4 pt-2"><%= @customer.name %></span>
+      </div>
+    </div>
+    <div class="col-4 mt-5">
+        <% if @customer.prefecture != nil %>
+        <p class="my-1 h4">Prefecture</p><span class="ml-5 h5 pt-2"><%= @customer.prefecture %></span>
+        <% end %>
+    </div>
+      <div class="col-4 mt-5">
+        <p class="my-1 h4">Setting</p>
+        <%= link_to edit_customer_path(@customer),class:"ml-4" do %>
+        <i class="fa-solid fa-user-gear h4 text-dark ml-5 mt-2"></i>
+        <% end %>
+      </div>
+  </div>
+  <div class="row border-top mt-5 ">
+    <div class="col-12">
+      <% @customer.informations.each do |infomation| %>
+      <%= information.title %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="d-inline-block bg-light lead px-3 ml-4 mt-3">information</p>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-3">
+      <table class="table table-bordered">
+        <tr>
+          <th>スポーツ</th>
+        </tr>
+      <% @informations.each do |information| %>
+      <% information.sport_genres.each do |sport| %>
+        <tr>
+          <td><%= sport.name %></td>
+        </tr>
+      </table>
+      <% end %>
+      <% end %>
+    </div>
+    <div class="col-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>タイトル</td>
+            <td>詳細</td>
+          </tr>
+        </thead>
+        <tbody>
+      <% @informations.each do |information| %>
+          <tr>
+            <td><%= information.title %></td>
+            <td><%= information.introduction %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-3">
+      <table class="table table-bordered">
+        <tr>
+          <th>都道府県</th>
+        </tr>
+        <%= @informations.each do |information| %>
+        <% information.prefecture_genres.each do |prefecture| %>
+        <tr>
+          <td><%= prefecture.name %></td>
+        </tr>
+        <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
