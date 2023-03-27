@@ -8,6 +8,8 @@ class Customer::InformationsController < ApplicationController
 
   def index
     @informations = Information.all
+    @sport = SportGenre.all
+    @prefecture = PrefectureGenre.all
   end
   def search
     

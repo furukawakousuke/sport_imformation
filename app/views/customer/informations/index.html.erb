@@ -5,31 +5,31 @@
     </div>
   </div>
   <div class="row mt-3">
-    <div class="col-3">
-      <table class="table table-bordered">
+    <div class="col-2">
+      <table class="table table-borderless">
         <tr>
-          <th>スポーツ</th>
+          <th class="border-bottom">スポーツ</th>
         </tr>
-      <% @informations.each do |information| %>
-      <% information.sport_genres.each do |sport| %>
+      <% @sport.each do |sport| %>
         <tr>
           <td><%= sport.name %></td>
         </tr>
+      <% end %>
       </table>
-      <% end %>
-      <% end %>
     </div>
-    <div class="col-6">
+    <div class="col-8">
       <table class="table table-bordered">
         <thead>
           <tr>
+            <td>投稿日時</td>
             <td>タイトル</td>
             <td>詳細</td>
           </tr>
         </thead>
-        <tbody>
       <% @informations.each do |information| %>
+        <tbody>
           <tr>
+            <td><%= information.create_at %></td>
             <td><%= information.title %></td>
             <td><%= information.introduction %></td>
           </tr>
@@ -37,17 +37,15 @@
         </tbody>
       </table>
     </div>
-    <div class="col-3">
+    <div class="col-2">
       <table class="table table-bordered">
         <tr>
           <th>都道府県</th>
         </tr>
-        <%= @informations.each do |information| %>
-        <% information.prefecture_genres.each do |prefecture| %>
+        <% @prefecture.each do |prefecture| %>
         <tr>
-          <td><%= prefecture.name %></td>
+          <td><%= prefecture.enum.name %></td>
         </tr>
-        <% end %>
         <% end %>
       </table>
     </div>
