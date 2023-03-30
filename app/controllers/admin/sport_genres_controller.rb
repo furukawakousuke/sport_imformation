@@ -2,10 +2,16 @@ class Admin::SportGenresController < ApplicationController
   def index
     @sports = SportGenre.all
     @sport = SportGenre.new
+    @prefecture = PrefectureGenre.new
   end
   def create
     @sport = SportGenre.new(sport_params)
     @sport.save
+    redirect_to admin_sport_genres_path
+  end
+  def update
+    @sport = SportGenre.find(params[:id])
+    @sport.update(sport_params)
     redirect_to admin_sport_genres_path
   end
   def destroy
@@ -15,6 +21,7 @@ class Admin::SportGenresController < ApplicationController
   end
 
   def edit
+    @sport = SportGenre.find(params[:id])
   end
 
   private

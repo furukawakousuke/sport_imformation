@@ -5,7 +5,6 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :informations,dependent: :destroy
          has_many :prefecture_genres,dependent: :destroy
-         accepts_nested_attributes_for :prefecture_genres
           has_many :comments,dependent: :destroy
           has_many :favorites,dependent: :destroy
           

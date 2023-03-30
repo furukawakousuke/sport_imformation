@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="d-inline-block px-4 mt-3 ml-3 bg-light ">都道府県登録</h4>
+      <table class="mt-5">
+        <tr>
+         <%= form_with model: @prefecture,url: admin_prefecture_genres_path,method: :post do |f| %>
+          <td>
+            <%= f.text_field :prefectures %>
+            <%= f.submit "保存",class:"btn btn-success btn-sm px-4 ml-3" %>
+          </td>
+        <% end %>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table-bordered">
+        <thead>
+          <tr>
+            <td class="pr-5">都道府県</td>
+            <td colspan="2"></td>
+          </tr>
+        </thead>
+        <% @prefectures.each do |prefecture| %>
+        <tbody>
+          <tr>
+            <td><%= prefecture.prefectures %></td>
+            <td>
+             <%= link_to "編集",edit_admin_prefecture_genre_path(prefecture),class:"btn btn-success btn-sm px-4" %>
+            <%= link_to "削除",admin_prefecture_genre_path(prefecture),method: :delete,class:"btn btn-danger btn-sm px-4" %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

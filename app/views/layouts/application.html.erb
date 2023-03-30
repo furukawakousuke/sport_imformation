@@ -69,12 +69,14 @@
     <main class="mb-auto">
     <%= yield %>
     </main>
-    <footer class="bg-dark text-white pt-4 pb-4">
+    <footer class="bg-dark text-white fixed-bottom mt-3 pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
           <div class="col-12 text-center">
+            <% if current_customer %>
             <%= link_to new_information_path do %>
             <i class="fa-regular fa-square-plus h3 text-white"></i>
+            <% end %>
             <% end %>
           </div>
         </div>

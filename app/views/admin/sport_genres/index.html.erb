@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row mt-4">
-    <div class="col-12">
+    <div class="col-6">
       <h4 class="d-inline-block px-4 mt-3 ml-3 bg-light mb-5">スポーツジャンル</h4>
       <table>
-      <%= form_with model: @sport,url: admin_sport_genres_path,method: :post do |f| %>
         <tr>
+        <%= form_with model: @sport,url: admin_sport_genres_path,method: :post do |f| %>
           <td>
             <%= f.label :name,"スポーツジャンル登録" %>
             <%= f.text_field :name %>
             <%= f.submit "登録",class:"btn btn-success btn-sm px-3" %>
           </td>
+        <% end %>
         </tr>
-      <% end %>
       </table>
     </div>
   </div>

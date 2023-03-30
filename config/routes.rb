@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin
   devise_for :customer
   namespace :admin do
+    resources :prefecture_genres,only:[:index,:edit,:create,:update,:destroy]
     resources :sport_genres,only:[:index,:edit,:create,:update,:destroy]
     resources :informations,only:[:index,:show,:destroy]
     resources :customers,only:[:index,:show]
