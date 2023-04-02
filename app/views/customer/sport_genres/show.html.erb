@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+       <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>投稿日時</td>
+            <td>タイトル</td>
+            <td>スポーツ</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+       <% @sport.informations.each do |information| %>
+          <tr>
+            <td><%= information.created_at.strftime('%Y/%m/%d') %></td>
+            <td>
+            <%= link_to information_path(information) do %>
+            <%= information.title %>
+            <% end %>
+            </td>
+            <td><%= information.sport_genre.name %></td>
+            <td><%= information.prefecture_genre.prefectures %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

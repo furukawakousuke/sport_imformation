@@ -1,2 +1,39 @@
-<h1>Customers::Informations#new</h1>
-<p>Find me in app/views/customers/informations/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="px-4 d-inline-block bg-light mt-3 ml-3">投稿ページ</h4>
+      <%= form_with model: @information,url: informations_path,method: :post do |f| %>
+      <table class="mx-auto">
+        <tr>
+          <td>
+            <%= f.label :title,"タイトル" %><br>
+            <%= f.text_field :title,:size=>'50',class:"ml-4 form-control form-control-sm" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label "スポーツ" %><br>
+           <%= f.select :sport_genre_id,options_from_collection_for_select(SportGenre.all,:id,:name),{include_blank: '選択してください'},{class: ' mb-3 ml-4 form-control form-control-sm'} %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label "都道府県" %><br>
+           <%= f.select :prefecture_genre_id,options_from_collection_for_select(PrefectureGenre.all,:id,:prefectures),{include_blank: '選択してください'},{class: ' mb-3 ml-4 form-control form-control-sm'} %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.text_area :introduction,:size=>'50x6',class:"ml-4 form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <%= f.submit"投稿",class:"btn btn-info mt-3" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
