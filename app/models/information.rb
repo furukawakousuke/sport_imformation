@@ -5,4 +5,8 @@ class Information < ApplicationRecord
   belongs_to :prefecture_genre
   belongs_to :sport_genre
   
+  def favorited?(customer)
+    favorites.exists?(customer_id: customer.id)
+  end
+  
 end
