@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :customers,only:[:index,:show]
   end
   scope module: :customer do
-    resources :favorites, only: [:index]
+    resources :favorites, only: [:show]
     resource :favorites, only: [:create,:destroy]
     get "search" => "informations#search"
     resources :informations,only:[:new,:index,:show,:edit,:create,:update,:destroy] do

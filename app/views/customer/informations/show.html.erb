@@ -4,10 +4,11 @@
       <h4 class="bg-light px-4 d-inline-block my-3 ml-3">詳細ページ</h4><br>
       
       <div class="border-bottom">
-        <h5><%= @information.title %>
-      <% if @information.customer = current_customer %>
+      <h5><%= @information.title %>
+      <% if @information.customer_id == current_customer.id %>
       <%= link_to "編集" ,edit_information_path,class:"btn btn-success btn-sm px-3 font-weight-bold" %>
-      <% end %></h5>
+      <% end %>
+      </h5>
       </div><br>
       <%=safe_join(@information.introduction.split("\n"),tag(:br))%>
       <br>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+     <h4 class="px-4 d-inline-block bg-light mt-3 ml-3">お気に入り一覧</h4>
+     <table class="table mt-3">
+        <thead>
+          <tr>
+            <td>日時</td>
+            <td>タイトル</td>
+            <td>スポーツ</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tabody>
+          <% @favorite.each do |information| %>
+          <tr><td><%= information.created_at.strftime('%Y/%m/%d') %></td>
+            <td>
+              <%= link_to information_path(information) do %>
+              <%= information.title %>
+              <% end %>
+            </td>
+            <td><%= information.sport_genre.name %></td>
+            <td><%= information.prefecture_genre.prefectures %></td>
+          </tr>
+          <% end %>
+        </tabody>
+     </table>
+    </div>
+  </div>
+</div>

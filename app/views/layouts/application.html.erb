@@ -31,21 +31,23 @@
               <%= link_to '情報一覧',informations_path, class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to '保存一覧', favorites_path, class: 'nav-link text-dark btn btn-outline-dark' %>
+              <%= link_to '保存一覧', favorite_path(current_customer), class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
             <li class="nav-item">
               <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
             <% elsif admin_signed_in? %>
             <li>
-              <%= link_to "情報一覧",admin_information_path, class: 'nav-link text-dark btn btn-outline-dark' %>
+              <%= link_to "情報一覧",admin_informations_path, class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
             <li>
               <%= link_to"会員一覧",admin_customers_path, class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
-            
             <li>
-              <%= link_to "ジャンル登録",admin_genres_path, class: 'nav-link text-dark btn btn-outline-dark' %>
+              <%= link_to "スポーツ登録",admin_sport_genres_path, class: 'nav-link text-dark btn btn-outline-dark' %>
+            </li>
+            <li>
+              <%= link_to "場所登録",admin_prefecture_genres_path, class: 'nav-link text-dark btn btn-outline-dark' %>
             </li>
             <li>
               <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark btn btn-outline-dark' %>

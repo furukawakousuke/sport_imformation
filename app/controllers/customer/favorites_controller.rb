@@ -1,5 +1,8 @@
 class Customer::FavoritesController < ApplicationController
-  def index
+  def show
+    @customer = Customer.find(params[:id])
+    information = Favorite.where(customer_id: @customer.id).pluck(:information_id)
+    @favorite = Information.find(information)
   end
   
   def create

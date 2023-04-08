@@ -19,6 +19,12 @@
         </tr>
         <tr>
           <td>
+            <%= f.label :prefecture,"出身地" %>
+            <%= f.select :prefecture,Customer.prefectures.keys,{},class:"form-control form-control-sm ml-3" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <%= f.label :password,"パスワード(６文字以上)" %><br>
             <%= f.password_field :password, autocomplete: "new-password",:size=>'30',class:"ml-3 form-control form-control-sm" %>
           </td>
