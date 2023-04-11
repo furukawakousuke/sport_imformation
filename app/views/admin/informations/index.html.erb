@@ -1,2 +1,33 @@
-<h1>Admin::Information#index</h1>
-<p>Find me in app/views/admin/information/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="bg-light px-4 d-inline-block mt-3 mr-3">情報一覧(管理者用)</h4>
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>記入者</th>
+            <th>スポーツ</th>
+            <th>場所</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @informations.reverse.each do |information| %>
+          <tr>
+            <td><%= information.id %></td>
+            <td>
+              <%= link_to admin_information_path(information) do %>
+              <%= information.title %>
+              <% end %>
+            </td>
+            <td><%= information.customer.name %></td>
+            <td><%= information.sport_genre.name %></td>
+            <td><%= information.prefecture_genre.prefectures %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

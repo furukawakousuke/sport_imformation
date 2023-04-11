@@ -25,7 +25,7 @@
       </div>
       </div>
     <div class="col-6 mt-5">
-      <table>
+      <table class="table">
         <% @information.comments.each do |comment| %>
         <tr>
           <td class="border-bottom">
@@ -49,5 +49,6 @@
         <% end %>
     </div>
       <p class="text-secondary text-right">コメント件数：<%= @information.comments.count %></p>
+    </div>
   </div>
 </div>
